@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --fondo: #ffffff;
+    --texto: #222222;
+    --caja: #e9ecef;
+    --borde: #222222;
+    --boton: #1a6fc4;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fondo: #1e1e1e;
+        --texto: #f1f1f1;
+        --caja: #2e2e2e;
+        --borde: #f1f1f1;
+        --boton: #6db3f2;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+a {
+    color: var(--texto);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    padding: 15px 30px;
+    border-bottom: 2px solid var(--borde);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ol {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+main {
+    padding: 30px;
+}
+
+/* el formulario va centrado en una caja */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: var(--caja);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    background-color: var(--fondo);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 25px;
+    font-family: inherit;
+    background-color: var(--boton);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    border-top: 2px solid var(--borde);
+}
+
+/* celular */
+@media (max-width: 700px) {
+    header {
+        padding: 15px 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ol {
+        gap: 12px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    form {
+        padding: 15px;
+    }
+}

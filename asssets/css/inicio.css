@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/*  modo claro */
+:root {
+    --fondo: #ffffff;
+    --texto: #222222;
+    --caja: #e9ecef;
+    --borde: #222222;
+}
+
+/* modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fondo: #1e1e1e;
+        --texto: #f1f1f1;
+        --caja: #2e2e2e;
+        --borde: #f1f1f1;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+a {
+    color: var(--texto);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* menu que tiene inicio , articulos , proyectos , contacto */
+header {
+    padding: 15px 30px;
+    border-bottom: 2px solid var(--borde);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ol {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* todo el ancho ocupa el titulo */
+section {
+    width: 100%;
+    text-align: center;
+    padding: 60px 30px;
+    border-bottom: 2px solid var(--borde);
+}
+
+section h1 {
+    margin-bottom: 15px;
+}
+
+section p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* las dos cajas quedan una al lado de la otra */
+article {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--caja);
+    border-right: 1px solid var(--borde);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    border-top: 2px solid var(--borde);
+}
+
+/* responsivo */
+@media (max-width: 700px) {
+    header {
+        padding: 15px 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ol {
+        gap: 12px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    /* una ensima de otra */
+    article {
+        flex-basis: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--borde);
+    }
+}
